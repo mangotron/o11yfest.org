@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{% assign person = site.data.speakers.items | where_exp:"item", "item.id == page.id" | first %}
+
+<div class="flexbox">
+  {% include person-left.html person=person %}
+  <div style="min-width:300px;flex:1;align-self:flex-end;">
+    <h2>{{ person.title }}</h2>
+    <p>
+      {{ person.abstract | markdownify }}
+    </p>
+  </div>
+</div>
+{% include person-bio.html person=person %}

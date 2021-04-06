@@ -4,21 +4,25 @@ title:  "Agenda"
 permalink: /agenda
 ---
 
-# Waiting to close the CFP
+# CFP Closed, Schedule Coming Soon!
 
-Our CFP is still open until March 15th, so we do not have a finalized schedule
- yet. However, here's a like view of what the two days will look like:
+Our CFP for o11yfest 2021 closed March 15th, and our organizers have finalized acceptances.
+Though we're still coordinating the final timings, we do have many confirmed speakers!
 
- <div class="flexbox">
-   <a class="flexbox-button" href="/cfp">Submit a Talk</a>
-   <a class="flexbox-button" href="/attend">Attend this Event</a>
- </div>
+<div class="flexbox">
+  <a class="flexbox-button" href="{{ site.registration_link }}">Attend this Event</a>
+  <a class="flexbox-button" href="/sponsor">Sponsor this Event</a>
+</div>
+
+# Confirmed Speakers
+
+{% include speaker-thumbs.html %}
 
 (Times are in Eastern / Atlantic EST time)
 
 <div class="flexbox" style="">
 
-  <div markdown="1" style="width:50%">
+  <div markdown="1" style="flex:1;min-width:450px;">
 
 ### Day 1 (5/17) - Biz Value / Case Studies
 
@@ -39,7 +43,7 @@ Our CFP is still open until March 15th, so we do not have a finalized schedule
 
   </div>
 
-  <div markdown="1" style="width:50%">
+  <div markdown="1" style="flex:1;min-width:450px;">
 
 ### Day 2 (5/18) - OTel Community
 

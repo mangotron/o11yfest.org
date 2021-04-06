@@ -4,9 +4,17 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.permalink and page.permalink contains "/speakers/" %}
+    {% assign speaker = site.data.speakers.items | where_exp:"item", "item.id == page.id" | first %}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@o11yfest">
+    <meta name="twitter:creator" content="@o11yfest">
+    <meta name="twitter:title" content="{{ speaker.name }} at o11yfest May 17-18">
+    <meta name="twitter:description" content="{{ page.title }}: {{ speaker.bio }}">
+    <meta name="twitter:image" content="{{ site.produrl }}/assets/images/speakers/socials/{{ speaker.id }}.png">
+    {% endif %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-{% seo %}
   </head>
 
   <body>
@@ -71,13 +79,15 @@
     <script type="text/javascript">
       $(function () {   //  <- jquery is not yet initialized
         updateOffsiteLinksToOpenInBlank()
+
+        if(window.onloadqueue && window.onloadqueue != undefined && window.onloadqueue.length > 0) {
+          $.each(window.onloadqueue,function(i,v) { v() });
+        }
       });
       function updateOffsiteLinksToOpenInBlank() {
         var host = document.location.hostname
         var els = $("a:not(:target)").each(function(i,o) {
-          var isCFP = ((o.href+"").trim().indexOf("/cfp") > -1)
-          if(((o.href+"").trim().length > 0 && (o.href.indexOf('://'+host)<1 && $(o).attr('use-same-tab') != "true"))
-            || isCFP) {
+          if(((o.href+"").trim().length > 0 && (o.href.indexOf('://'+host)<1 && $(o).attr('use-same-tab') != "true"))) {
             if($(o).attr('is-external-link') != "true") {
               $(o).attr('is-external-link','true')
               $(o).attr('target','_blank')

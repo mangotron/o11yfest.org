@@ -30,4 +30,5 @@ Amongst the broader volunteer base that will be helping with this year's event,
 - Paul Bruce
 - Liz Fong-Jones
 - Michael Thomas Clark
-- Ameila Mango
+- Amelia Mango
+- Aaron Aldrich
